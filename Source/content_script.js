@@ -71,6 +71,7 @@ function handleText(textNode)
 	v = v.replace(/\bWow\b/g, "Oh GOD This is SO Boring. Please Kill Me.");
 	v = v.replace(/\bAbsolutely\b/g, "Moderately");
 	v = v.replace(/\bAwesome\b/g, "Probably Slightly Less Boring Than Working");
+	v = v.replace(/\bSimple Lessons\b/g, "Inane Pieces of Bullshit Advice");
 		
 	textNode.nodeValue = v;
 }
