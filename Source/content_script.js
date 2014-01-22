@@ -35,6 +35,14 @@ function handleText(textNode)
 
 	v = v.replace(/\bLiterally\b/g, "Figuratively");
 	v = v.replace(/\bliterally\b/g, "figuratively");
+	v = v.replace(/\bGreatest\b/g, "Average");
+	v = v.replace(/\bgreatest\b/g, "average");
+	v = v.replace(/\bWorst\b/g, "Typical");
+	v = v.replace(/\bworst\b/g, "typical");
+	v = v.replace(/\bOf All Time\b/g, "For Now");
+	v = v.replace(/\bof all time\b/g, "for now");
+	v = v.replace(/\bOf All-Time\b/g, "For Now");
+	v = v.replace(/\bof all-time\b/g, "for now");
 	v = v.replace(/\bWill Blow Your Mind\b/g, "Might Perhaps Mildly Entertain You For a Moment");
 	v = v.replace(/\bWill Change Your Life Forever\b/g, "Will Not Change Your Life in ANY Way");
 	v = v.replace(/\bDoesn't want you to see\b/g, "Doesn't Really Care If You See");
