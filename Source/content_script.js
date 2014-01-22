@@ -44,8 +44,8 @@ function handleText(textNode)
 	v = v.replace(/\bOf All-Time\b/g, "For Now");
 	v = v.replace(/\bof all-time\b/g, "for now");
 	v = v.replace(/\bWill Blow Your Mind\b/g, "Might Perhaps Mildly Entertain You For a Moment");
-	v = v.replace(/\bWill Change Your Life Forever\b/g, "Will Not Change Your Life in ANY Way");
-	v = v.replace(/\bcan change your life\b/g, "Will Not Change Your Life in ANY Way");
+	v = v.replace(/\bWill Change Your Life Forever\b/g, "Will Not Change Your Life in ANY Meaningful or Lasting Way");
+	v = v.replace(/\bcan change your life\b/g, "Will Not Change Your Life in ANY Meaningful Way");
 	v = v.replace(/\bDoesn't want you to see\b/g, "Doesn't Really Care If You See");
 	v = v.replace(/\bOne Weird Trick\b/g, "One Piece of Completely Anecdotal Horsehit");
 	v = v.replace(/\bYou Wont Believe\b/g, "In All Likelihood, You'll Believe");
