@@ -68,10 +68,21 @@ function handleText(textNode)
 	v = v.replace(/\bOMG\b/g, "*yawn*");
 	v = v.replace(/\bWHOA\b/g, "Zzzzzzzzzzz");
 	v = v.replace(/\bWOW\b/g, "Zzzzzzzzzzz");
-	v = v.replace(/\bWow\b/g, "Oh GOD This is SO Boring. Please Kill Me.");
+	v = v.replace(/\bWow\b/g, "Oh GOD This is SO Boring. Please Kill Me");
 	v = v.replace(/\bAbsolutely\b/g, "Moderately");
 	v = v.replace(/\bAwesome\b/g, "Probably Slightly Less Boring Than Working");
 	v = v.replace(/\bSimple Lessons\b/g, "Inane Pieces of Bullshit Advice");
+	v = v.replace(/\bStop What You're Doing\b/g, "Bookmark Now and Later Completely Forget About");
+	v = v.replace(/\bStop What You&#8217;re Doing\b/g, "Bookmark Now and Later Completely Forget About");
+	v = v.replace(/\bStop What You’re Doing\b/g, "Bookmark Now and Later Completely Forget About");
+	v = v.replace(/\bYou Didn't Know Existed\b/g, "No One Gives a Shit About");
+	v = v.replace(/\bYou Didn&#8217;t Know Existed\b/g, "No One Gives a Shit About");
+	v = v.replace(/\bYou Didn’t Know Existed\b/g, "No One Gives a Shit About");
+	v = v.replace(/\bYou Didn't Know Exist\b/g, "No One Gives a Shit About");
+	v = v.replace(/\bYou Didn&#8217;t Know Exist\b/g, "No One Gives a Shit About");
+	v = v.replace(/\bYou Didn’t Know Exist\b/g, "No One Gives a Shit About");
+
+
 		
 	textNode.nodeValue = v;
 }
