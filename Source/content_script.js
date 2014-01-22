@@ -61,8 +61,11 @@ function handleText(textNode)
 	v = v.replace(/\bWHAT?\b/g, "Some Other Crap");
 	v = v.replace(/\bNothing Could Prepare Me For\b/g, "Does ANYONE Fucking Care About");
 	v = v.replace(/\bOMG\b/g, "No One Cares. At All.");
-	v = v.replace(/\bShocked\b/g, "Vaguely Suprised, But Not Really");
+	v = v.replace(/\bShocked\b/g, "Vaguely Suprised");
 	v = v.replace(/\bShocking\b/g, "Barely Noticable");
+	v = v.replace(/\bIncredible\b/g, "Painfully Ordinary");
+	v = v.replace(/\bUnbelievable\b/g, "Painfully Ordinary");
+	v = v.replace(/\bOMG\b/g, "*yawn*");
 		
 	textNode.nodeValue = v;
 }
