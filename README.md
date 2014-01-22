@@ -5,14 +5,12 @@ Downworthy Chrome Extension
 This is a very rough version right now, not quite ready for prime-time, but the general 
 gist is that of a Chrome extension (Safari and maybe FF coming soon) that replaces the absurd hyberbole of viral content sites like Buzzfeed, ViralNova, Upworthy, etc with more realistic headlines. 
 
+Here are some examples:
+
 ![Alt text](/images/article.png?raw=true "Sample Screenshot") 
 
+Original text: Nothing Could Prepare Me For What’s Revealed When This Glacier Lake Melts. OMG
 ![Original Title: Nothing Could Prepare Me For What’s Revealed When This Glacier Lake Melts. OMG](/images/lake.png?raw=true "Nothing Could Prepare Me For What’s Revealed When This Glacier Lake Melts. OMG") 
-
-
-
-
-
 
 Here are some samples, although not all have been implemented yet:
 
