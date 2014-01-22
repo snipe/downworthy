@@ -3,7 +3,9 @@
 Downworthy Chrome Extension
 ==========
 This is a very rough version right now, not quite ready for prime-time, but the general 
-gist is that of a Chrome extension (Safari and maybe FF coming soon) that replaces the absurd hyberbole of viral content sites like Buzzfeed, ViralNova, Upworthy, etc with more realistic headlines.  
+gist is that of a Chrome extension (Safari and maybe FF coming soon) that replaces the absurd hyberbole of viral content sites like Buzzfeed, ViralNova, Upworthy, etc with more realistic headlines. 
+
+![Alt text](/images/article.jpg?raw=true "Sample Screenshot") 
 
 Here are some samples, although not all have been implemented yet:
 
