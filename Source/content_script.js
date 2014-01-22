@@ -53,9 +53,17 @@ function handleText(textNode)
 	v = v.replace(/\bwon the internet\b/g, "seemed pretty cool");
 	v = v.replace(/\bScientific Reasons\b/g, "Vaguely Science-y Reasons");
 	v = v.replace(/\bThis Is What Happens\b/g, "This Is Our Bullshit Clickbait Version Of What Happens");
-	v = v.replace(/\bOne Weird Trick\b/g, "One Piece of Nonsensical Folklore Bullshit ");
-	
-	
+	v = v.replace(/\bOne Weird Trick\b/g, "One Piece of Nonsensical Folklore Bullshit");
+	v = v.replace(/\bone weird trick\b/g, "one piece of nonsensical folklore bullshit ");
+	v = v.replace(/\bRight Now\b/g, "Eventually");
+	v = v.replace(/\bThat Will Make You Rethink\b/g, "That You May Find Vaguely Interesting But Won't Change Your Life in Any Way");
+	v = v.replace(/\bOf All Time\b/g, "Of The Last 30 Seconds");
+	v = v.replace(/\bWHAT?\b/g, "Some Other Crap");
+	v = v.replace(/\bNothing Could Prepare Me For\b/g, "Does ANYONE Fucking Care About");
+	v = v.replace(/\bOMG\b/g, "No One Cares. At All.");
+	v = v.replace(/\bShocked\b/g, "Vaguely Suprised, But Not Really");
+	v = v.replace(/\bShocking\b/g, "Barely Noticable");
+		
 	textNode.nodeValue = v;
 }
 
