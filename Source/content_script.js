@@ -60,12 +60,17 @@ function handleText(textNode)
 	v = v.replace(/\bOf All Time\b/g, "Of The Last 30 Seconds");
 	v = v.replace(/\bWHAT?\b/g, "Some Other Crap");
 	v = v.replace(/\bNothing Could Prepare Me For\b/g, "Does ANYONE Fucking Care About");
-	v = v.replace(/\bOMG\b/g, "No One Cares. At All.");
+	v = v.replace(/\bOMG\b/g, "No One Cares. At All");
 	v = v.replace(/\bShocked\b/g, "Vaguely Suprised");
 	v = v.replace(/\bShocking\b/g, "Barely Noticable");
 	v = v.replace(/\bIncredible\b/g, "Painfully Ordinary");
 	v = v.replace(/\bUnbelievable\b/g, "Painfully Ordinary");
 	v = v.replace(/\bOMG\b/g, "*yawn*");
+	v = v.replace(/\bWHOA\b/g, "Zzzzzzzzzzz");
+	v = v.replace(/\bWOW\b/g, "Zzzzzzzzzzz");
+	v = v.replace(/\bWow\b/g, "Oh GOD This is SO Boring. Please Kill Me.");
+	v = v.replace(/\bAbsolutely\b/g, "Moderately");
+	v = v.replace(/\bAwesome\b/g, "Probably Slightly Less Boring Than Working");
 		
 	textNode.nodeValue = v;
 }
