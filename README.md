@@ -7,6 +7,13 @@ gist is that of a Chrome extension (Safari and maybe FF coming soon) that replac
 
 ![Alt text](/images/article.png?raw=true "Sample Screenshot") 
 
+![Original Title: Nothing Could Prepare Me For What’s Revealed When This Glacier Lake Melts. OMG](/images/lake.png?raw=true "Nothing Could Prepare Me For What’s Revealed When This Glacier Lake Melts. OMG") 
+
+
+
+
+
+
 Here are some samples, although not all have been implemented yet:
 
 	"Literally" => figuratively
