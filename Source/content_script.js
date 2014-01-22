@@ -73,6 +73,8 @@ function handleText(textNode)
 	v = v.replace(/\bShocking\b/g, "Barely Noticable");
 	v = v.replace(/\bIncredible\b/g, "Painfully Ordinary");
 	v = v.replace(/\bUnbelievable\b/g, "Painfully Ordinary");
+	v = v.replace(/\bMind-Blowing\b/g, "Painfully Ordinary");
+	v = v.replace(/\bMind Blowing\b/g, "Mind-Numbingly Ordinary");
 	v = v.replace(/\bOMG\b/g, "*yawn*");
 	v = v.replace(/\bWHOA\b/g, "Zzzzzzzzzzz");
 	v = v.replace(/\bWOW\b/g, "Zzzzzzzzzzz");
