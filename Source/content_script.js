@@ -45,6 +45,7 @@ function handleText(textNode)
 	v = v.replace(/\bof all-time\b/g, "for now");
 	v = v.replace(/\bWill Blow Your Mind\b/g, "Might Perhaps Mildly Entertain You For a Moment");
 	v = v.replace(/\bWill Change Your Life Forever\b/g, "Will Not Change Your Life in ANY Way");
+	v = v.replace(/\bcan change your life\b/g, "Will Not Change Your Life in ANY Way");
 	v = v.replace(/\bDoesn't want you to see\b/g, "Doesn't Really Care If You See");
 	v = v.replace(/\bOne Weird Trick\b/g, "One Piece of Completely Anecdotal Horsehit");
 	v = v.replace(/\bYou Wont Believe\b/g, "In All Likelihood, You'll Believe");
@@ -91,7 +92,10 @@ function handleText(textNode)
 	v = v.replace(/\bYou Didn't Know Exist\b/g, "No One Gives a Shit About");
 	v = v.replace(/\bYou Didn&#8217;t Know Exist\b/g, "No One Gives a Shit About");
 	v = v.replace(/\bYou Didn’t Know Exist\b/g, "No One Gives a Shit About");
-
+	v = v.replace(/\bPriceless\b/g, "Painfully Ordinary");
+	v = v.replace(/\bpriceless\b/g, "painfully ordinary");
+	v = v.replace(/\bEpic\b/g, "Mundane");
+	v = v.replace(/\bepic\b/g, "mundane");
 
 		
 	textNode.nodeValue = v;
