@@ -15,7 +15,7 @@ Original text: Nothing Could Prepare Me For What’s Revealed When This Glacier 
 
 To Do:
 ====
-The code I have right now is very basic, working mostly from the fantastic Cloud-to-Butt extension, but I'll be adding in some smarter logic later to handle slightly more sophistcated English constructs. 
+The code I have right now is very basic, working mostly from the fantastic Cloud-to-Butt extension, but I'll be adding in some smarter logic later to handle slightly more sophisticated English constructs. 
 
 I also need to better handle infinite scroll and progressive loading. Right now, it fires when the DOM is finished loading, and then it doesn't fire again, which means when you're stuck on one of these websites (that of course uses infinte scroll), the stuff that hasn't appeared on the page at the time of page load completetion and prior to additional content being revealed won't be transformed. 
 
