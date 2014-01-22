@@ -7,45 +7,45 @@ gist is that of a Chrome extension (Safari and maybe FF coming soon) that replac
 
 Here are some samples, although not all have been implemented yet:
 
-"Literally" => figuratively
-"Will blow your mind" => may be of moderate interest to you
-"Will change your life forever"
-"Doesn't want you to see"
-"Is turned upside down"
-"Might/will/may make(s) you $foo"
-"One weird trick"
-"WATCH:" 
-"Actually" => "probably"
-"Unconventional" 
-"What if"
-"Infinitely"
-"Embarrassingly"
-"Here's a 5-minute video that will make you rethink our entire news media circus"
-"You won't believe"
-"Can't even handle"
-"Can't handle"
-"Shocking"
-"Incredible"
-"Truly shocking"
-"READ:"
-"Stop what you're doing"
-"Right now"
-"$x adjective mouns" => "another fucking listicle"
-"All you need today"
-"You'll never need another $foo"
-"Greatest blah of all time"
-"Flawless"
-"Owns the Internet"
-"Ruled the Internet"
-"Won the Internet"
-"The $x adjective nouns"
-"That caused one"
-- add "nobody cares"
-- prepend + append
-“Only $foo will understand”
-“only people with $foo understand”
-“that will make you rethink”
-“$blah simple lessons"
+	"Literally" => figuratively
+	"Will blow your mind" => may be of moderate interest to you
+	"Will change your life forever"
+	"Doesn't want you to see"
+	"Is turned upside down"
+	"Might/will/may make(s) you $foo"
+	"One weird trick"
+	"WATCH:" 
+	"Actually" => "probably"
+	"Unconventional" 
+	"What if"
+	"Infinitely"
+	"Embarrassingly"
+	"Here's a 5-minute video that will make you rethink our entire news media circus"
+	"You won't believe"
+	"Can't even handle"
+	"Can't handle"
+	"Shocking"
+	"Incredible"
+	"Truly shocking"
+	"READ:"
+	"Stop what you're doing"
+	"Right now"
+	"$x adjective mouns" => "another fucking listicle"
+	"All you need today"
+	"You'll never need another $foo"
+	"Greatest blah of all time"
+	"Flawless"
+	"Owns the Internet"
+	"Ruled the Internet"
+	"Won the Internet"
+	"The $x adjective nouns"
+	"That caused one"
+	- add "nobody cares"
+	- prepend + append
+	“Only $foo will understand”
+	“only people with $foo understand”
+	“that will make you rethink”
+	“$blah simple lessons"
 
 The code I have right now is very basic, working mostly from the fantastic Cloud-to-Butt extension, but I'll be adding in some smarter logic later to handle slightly more sophistcated English constructs. 
 
