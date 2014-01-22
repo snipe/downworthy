@@ -30,7 +30,7 @@ Here are some samples, although not all have been implemented yet:
 	"READ:"
 	"Stop what you're doing"
 	"Right now"
-	"$x adjective mouns" => "another fucking listicle"
+	"$x $adjective $nouns" => "another fucking listicle"
 	"All you need today"
 	"You'll never need another $foo"
 	"Greatest blah of all time"
