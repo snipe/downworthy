@@ -38,9 +38,9 @@ function handleText(textNode)
 	v = v.replace(/\bamazing\b/g, "pretty commonplace");
 	v = v.replace(/\bAwesome\b/g, "Probably Slightly Less Boring Than Working");
 	v = v.replace(/\bcan change your life\b/g, "Will Not Change Your Life in ANY Meaningful Way");
-	v = v.replace(/\bCan't Even Handle\b/g, "Can Totally Handle");
+	v = v.replace(/\bCan't Even Handle\b/g, "Can Totally Handle Without Any Significant Issue");
 	v = v.replace(/\bcan't even handle\b/g, "can totally probably handle");
-	v = v.replace(/\bcan't handle\b/g, "can totally handle");
+	v = v.replace(/\bcan't handle\b/g, "can totally handle without any significant issue");
 	v = v.replace(/\bCan't Handle\b/g, "Can Totally Handle");
 	v = v.replace(/\bcannot even handle\b/g, "Can Probably Totally Handle");
 	v = v.replace(/\bCannot Even Handle\b/g, "Can Probably Totally Handle");
