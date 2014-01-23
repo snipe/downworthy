@@ -1,7 +1,7 @@
 {
 	"manifest_version": 2,
 	"name": "Downworthy",
-	"version": "1.0",
+	"version": "0.0.1",
 	"description": "Replaces hyberbolic headlines from bombastic viral websites with a slightly more realistic version.",
 	"content_scripts": 
 	[
