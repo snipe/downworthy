@@ -85,10 +85,9 @@ function handleText(textNode)
 	v = v.replace(/\bWhoah\b/g, "*yawn*");
 	v = v.replace(/\bWill Blow Your Mind\b/g, "Might Perhaps Mildly Entertain You For a Moment");
 	v = v.replace(/\bWill Change Your Life Forever\b/g, "Will Not Change Your Life in ANY Meaningful or Lasting Way");
-	v = v.replace(/\bwon the internet\b/g, "seemed pretty cool");
+	v = v.replace(/\bwon the internet\b/g, "seems alright");
 	v = v.replace(/\bWon the Internet\b/g, "Seemed Pretty Cool");
-	v = v.replace(/\bworst\b/g, "typical");
-	v = v.replace(/\bWorst\b/g, "Typical");
+	v = v.replace(/\bWorst\b/g, "Vaguely Unpleasant");
 	v = v.replace(/\bWow\b/g, "Oh GOD This is SO Boring. Please Kill Me");
 	v = v.replace(/\bWOW\b/g, "Zzzzzzzzzzz");
 	v = v.replace(/\bYou Didn't Know Exist\b/g, "No One Gives a Shit About");
