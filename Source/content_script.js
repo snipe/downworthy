@@ -47,7 +47,7 @@ function handleText(textNode)
 	v = v.replace(/\bDoesn't want you to see\b/g, "Doesn't Really Care If You See");
 	v = v.replace(/\bepic\b/g, "mundane");
 	v = v.replace(/\bEpic\b/g, "Mundane");
-	v = v.replace(/\bGo Viral\b/g, "Be Overused Until You Cry");
+	v = v.replace(/\bGo Viral\b/g, "Be Overused So Much That You'll Silently Pray for the Sweet Release of Death to Make it Stop");
 	v = v.replace(/\bgreatest\b/g, "average");
 	v = v.replace(/\bGreatest\b/g, "Average");
 	v = v.replace(/\bIncredible\b/g, "Painfully Ordinary");
@@ -78,7 +78,6 @@ function handleText(textNode)
 	v = v.replace(/\bStop What You’re Doing\b/g, "Bookmark Now and Later Completely Forget About");
 	v = v.replace(/\bStop What You&#8217;re Doing\b/g, "Bookmark Now and Later Completely Forget About");
 	v = v.replace(/\bThat Will Make You Rethink\b/g, "That You May Find Vaguely Interesting But Won't Change Your Life in Any Way");
-	v = v.replace(/\bThe (?:Top )?(\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Twenty|Thirty|Fourty|Fifty|Hundred) Things/g, "The Obnoxious List of $1 Items");
 	v = v.replace(/\bThis Is What Happens\b/g, "This Is Our Bullshit Clickbait Version Of What Happens");
 	v = v.replace(/\bUnbelievable\b/g, "Painfully Ordinary");
 	v = v.replace(/\bUnimaginable\b/g, "Actually Kind of Droll");
@@ -88,10 +87,9 @@ function handleText(textNode)
 	v = v.replace(/\bWhoah\b/g, "*yawn*");
 	v = v.replace(/\bWill Blow Your Mind\b/g, "Might Perhaps Mildly Entertain You For a Moment");
 	v = v.replace(/\bWill Change Your Life Forever\b/g, "Will Not Change Your Life in ANY Meaningful or Lasting Way");
-	v = v.replace(/\bwon the internet\b/g, "seemed pretty cool");
+	v = v.replace(/\bwon the internet\b/g, "seems alright");
 	v = v.replace(/\bWon the Internet\b/g, "Seemed Pretty Cool");
-	v = v.replace(/\bworst\b/g, "typical");
-	v = v.replace(/\bWorst\b/g, "Typical");
+	v = v.replace(/\bWorst\b/g, "Vaguely Unpleasant");
 	v = v.replace(/\bWow\b/g, "Oh GOD This is SO Boring. Please Kill Me");
 	v = v.replace(/\bWOW\b/g, "Zzzzzzzzzzz");
 	v = v.replace(/\bYou Didn't Know Exist\b/g, "No One Gives a Shit About");
@@ -104,6 +102,8 @@ function handleText(textNode)
 	v = v.replace(/\bYou Won’t Believe\b/g, "In All Likelihood, You'll Believe");	
 	v = v.replace(/\bYou Won&#8217;t Believe\b/g, "In All Likelihood, You'll Believe");
 	v = v.replace(/\bYou Wont Believe\b/g, "In All Likelihood, You'll Believe");
+
+	v = v.replace(/\b(?:Top )?(\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Twenty|Thirty|Fourty|Fifty|Hundred) Things/g, "Inane Listicle of $1 Things You've Already Seen Somewhere Else");
 			
 	textNode.nodeValue = v;
 }
