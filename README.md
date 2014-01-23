@@ -4,7 +4,7 @@ Downworthy Chrome Extension
 ==========
 This is a very rough version right now, not quite ready for prime-time, but the general 
 gist is that of a Chrome extension (Safari and maybe FF coming soon) that replaces the absurd 
-hyberbole of clickbait viral content sites like Buzzfeed, ViralNova, Upworthy, etc with more realistic headlines. 
+hyperbole of clickbait viral content sites like Buzzfeed, ViralNova, Upworthy, etc with more realistic headlines. 
 
 Visit the Website
 ==========
@@ -22,8 +22,6 @@ To Do:
 ====
 The code I have right now is very basic, working mostly from the fantastic Cloud-to-Butt extension, but I'll be adding in some smarter logic later to handle slightly more sophisticated English constructs. 
 
-I also need to better handle infinite scroll and progressive loading. Right now, it fires when the DOM is finished loading, and then it doesn't fire again, which means when you're stuck on one of these websites (that of course uses infinte scroll), the stuff that hasn't appeared on the page at the time of page load completetion and prior to additional content being revealed won't be transformed. 
-
-I'll also be adding a toggle icon, so you can turn it off when you need to actually see the real content. 
+I also need to better handle infinite scroll and progressive loading. Right now, it fires when the DOM is finished loading, and then it doesn't fire again, which means when you're stuck on one of these websites (that of course uses infinite scroll), the stuff that hasn't appeared on the page at the time of page load completion and prior to additional content being revealed won't be transformed. 
 
 And finally, I'm going to have the actual string replacement library pulling from S3, so that it updates automatically, so when I update the goods, you get them the next time you start your browser.
