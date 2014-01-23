@@ -66,7 +66,6 @@ function handleText(textNode)
 	v = v.replace(/\bOMG\b/g, "No One Cares. At All");
 	v = v.replace(/\bOne Weird Trick\b/g, "One Piece of Completely Anecdotal Horsehit");
 	v = v.replace(/\bone weird trick\b/g, "one piece of nonsensical folklore bullshit ");
-	v = v.replace(/\bOne Weird Trick\b/g, "One Piece of Nonsensical Folklore Bullshit");
 	v = v.replace(/\bpriceless\b/g, "painfully ordinary");
 	v = v.replace(/\bPriceless\b/g, "Painfully Ordinary");
 	v = v.replace(/\bRight Now\b/g, "Eventually");
@@ -81,7 +80,7 @@ function handleText(textNode)
 	v = v.replace(/\bThis Is What Happens\b/g, "This Is Our Bullshit Clickbait Version Of What Happens");
 	v = v.replace(/\bUnbelievable\b/g, "Painfully Ordinary");
 	v = v.replace(/\bUnimaginable\b/g, "Actually Kind of Droll");
-	v = v.replace(/\bWHAT?\b/g, "Some Other Crap");
+	v = v.replace(/\bWHAT\?\b/g, "Some Other Crap");
 	v = v.replace(/\bWhoa\b/g, "*yawn*");
 	v = v.replace(/\bWHOA\b/g, "Zzzzzzzzzzz");
 	v = v.replace(/\bWhoah\b/g, "*yawn*");
