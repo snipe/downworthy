@@ -47,9 +47,11 @@ function handleText(textNode)
 	v = v.replace(/\bDoesn't want you to see\b/g, "Doesn't Really Care If You See");
 	v = v.replace(/\bepic\b/g, "mundane");
 	v = v.replace(/\bEpic\b/g, "Mundane");
+	v = v.replace(/\bGo Viral\b/g, "Be Overused So Much That You'll Silently Pray for the Sweet Release of Death to Make it Stop");
 	v = v.replace(/\bgreatest\b/g, "average");
 	v = v.replace(/\bGreatest\b/g, "Average");
 	v = v.replace(/\bIncredible\b/g, "Painfully Ordinary");
+	v = v.replace(/\bInfuriate\b/g, "Mildly Annoy");
 	v = v.replace(/\bliterally\b/g, "figuratively");
 	v = v.replace(/\bLiterally\b/g, "Figuratively");
 	v = v.replace(/\bMind Blowing\b/g, "Mind-Numbingly Ordinary");
@@ -100,9 +102,8 @@ function handleText(textNode)
 	v = v.replace(/\bYou Won’t Believe\b/g, "In All Likelihood, You'll Believe");	
 	v = v.replace(/\bYou Won&#8217;t Believe\b/g, "In All Likelihood, You'll Believe");
 	v = v.replace(/\bYou Wont Believe\b/g, "In All Likelihood, You'll Believe");
-	v = v.replace(/\b(\w+) Things/g, "Inane Listicle of $1 Things You've Already Seen Somewhere Else");
-	v = v.replace(/\bGo Viral\b/g, "Be Overused So Much That You'll Silently Pray for the Sweet Release of Death to Make it Stop");
-	v = v.replace(/\bInfuriate\b/g, "Mildly Annoy");
+
+	v = v.replace(/\b(?:Top )?(\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Twenty|Thirty|Fourty|Fifty|Hundred) Things/g, "Inane Listicle of $1 Things You've Already Seen Somewhere Else");
 			
 	textNode.nodeValue = v;
 }
