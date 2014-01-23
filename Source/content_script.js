@@ -101,9 +101,8 @@ function handleText(textNode)
 	v = v.replace(/\bYou Won’t Believe\b/g, "In All Likelihood, You'll Believe");	
 	v = v.replace(/\bYou Won&#8217;t Believe\b/g, "In All Likelihood, You'll Believe");
 	v = v.replace(/\bYou Wont Believe\b/g, "In All Likelihood, You'll Believe");
-
-	v = v.replace(/\bThe (\w+) Things/g, "The Obnoxious List of $1 Items");
-	v = v.replace(/\bGo Viral\b/g, "Be Overused Until You Cry");
+	v = v.replace(/\b(\w+) Things/g, "Inane Listicle of $1 Things You've Already Seen Somewhere Else");
+	v = v.replace(/\bGo Viral\b/g, "Be Overused So Much That You'll Silently Pray for the Sweet Release of Death to Make it Stop");
 	v = v.replace(/\bInfuriate\b/g, "Mildly Annoy");
 			
 	textNode.nodeValue = v;
