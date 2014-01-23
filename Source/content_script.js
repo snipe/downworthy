@@ -47,9 +47,11 @@ function handleText(textNode)
 	v = v.replace(/\bDoesn't want you to see\b/g, "Doesn't Really Care If You See");
 	v = v.replace(/\bepic\b/g, "mundane");
 	v = v.replace(/\bEpic\b/g, "Mundane");
+	v = v.replace(/\bGo Viral\b/g, "Be Overused Until You Cry");
 	v = v.replace(/\bgreatest\b/g, "average");
 	v = v.replace(/\bGreatest\b/g, "Average");
 	v = v.replace(/\bIncredible\b/g, "Painfully Ordinary");
+	v = v.replace(/\bInfuriate\b/g, "Mildly Annoy");
 	v = v.replace(/\bliterally\b/g, "figuratively");
 	v = v.replace(/\bLiterally\b/g, "Figuratively");
 	v = v.replace(/\bMind Blowing\b/g, "Mind-Numbingly Ordinary");
@@ -76,6 +78,7 @@ function handleText(textNode)
 	v = v.replace(/\bStop What You’re Doing\b/g, "Bookmark Now and Later Completely Forget About");
 	v = v.replace(/\bStop What You&#8217;re Doing\b/g, "Bookmark Now and Later Completely Forget About");
 	v = v.replace(/\bThat Will Make You Rethink\b/g, "That You May Find Vaguely Interesting But Won't Change Your Life in Any Way");
+	v = v.replace(/\bThe (?:Top )?(\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Twenty|Thirty|Fourty|Fifty|Hundred) Things/g, "The Obnoxious List of $1 Items");
 	v = v.replace(/\bThis Is What Happens\b/g, "This Is Our Bullshit Clickbait Version Of What Happens");
 	v = v.replace(/\bUnbelievable\b/g, "Painfully Ordinary");
 	v = v.replace(/\bUnimaginable\b/g, "Actually Kind of Droll");
@@ -101,10 +104,6 @@ function handleText(textNode)
 	v = v.replace(/\bYou Won’t Believe\b/g, "In All Likelihood, You'll Believe");	
 	v = v.replace(/\bYou Won&#8217;t Believe\b/g, "In All Likelihood, You'll Believe");
 	v = v.replace(/\bYou Wont Believe\b/g, "In All Likelihood, You'll Believe");
-
-	v = v.replace(/\bThe (\w+) Things/g, "The Obnoxious List of $1 Items");
-	v = v.replace(/\bGo Viral\b/g, "Be Overused Until You Cry");
-	v = v.replace(/\bInfuriate\b/g, "Mildly Annoy");
 			
 	textNode.nodeValue = v;
 }
