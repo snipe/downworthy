@@ -31,6 +31,7 @@ function walk(node)
 
 function handleText(textNode) 
 {
+	if (localStorage.getItem('paused') != 'true'){
 	var v = textNode.nodeValue;
 
 	v = v.replace(/\bAbsolutely\b/g, "Moderately");
@@ -103,6 +104,22 @@ function handleText(textNode)
 	v = v.replace(/\bYou Wont Believe\b/g, "In All Likelihood, You'll Believe");
 
 	v = v.replace(/\b(?:Top )?(\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Twenty|Thirty|Fourty|Fifty|Hundred) Things/g, "Inane Listicle of $1 Things You've Already Seen Somewhere Else");
+	}
 			
 	textNode.nodeValue = v;
+	
 }
+
+
+
+
+
+chrome.extension.sendRequest({name: "isPaused?"}, function(response) {
+  if (response.value != 'true') {
+    handleText(document.body);
+
+    document.body.addEventListener('DOMNodeInserted', function(event) {
+        handleText(event.target);
+    });
+  }
+});
