@@ -34,7 +34,7 @@ function handleText(textNode)
 	var v = textNode.nodeValue;
 
 	v = v.replace(/\bAbsolutely\b/g, "Moderately");
-	v = v.replace(/\bAmazing\b/g, "Barely Noticable");
+	v = v.replace(/\bAmazing\b/g, "Barely Noticeable");
 	v = v.replace(/\bamazing\b/g, "pretty commonplace");
 	v = v.replace(/\bAwesome\b/g, "Probably Slightly Less Boring Than Working");
 	v = v.replace(/\bcan change your life\b/g, "Will Not Change Your Life in ANY Meaningful Way");
@@ -64,14 +64,14 @@ function handleText(textNode)
 	v = v.replace(/\bOf All-Time\b/g, "For Now");
 	v = v.replace(/\bOMG\b/g, "*yawn*");
 	v = v.replace(/\bOMG\b/g, "No One Cares. At All");
-	v = v.replace(/\bOne Weird Trick\b/g, "One Piece of Completely Anecdotal Horsehit");
-	v = v.replace(/\bone weird trick\b/g, "one piece of nonsensical folklore bullshit ");
+	v = v.replace(/\bOne Weird Trick\b/g, "One Piece of Completely Anecdotal Horseshit");
+	v = v.replace(/\bone weird trick\b/g, "one piece of nonsensical folklore bullshit");
 	v = v.replace(/\bpriceless\b/g, "painfully ordinary");
 	v = v.replace(/\bPriceless\b/g, "Painfully Ordinary");
 	v = v.replace(/\bRight Now\b/g, "Eventually");
 	v = v.replace(/\bScientific Reasons\b/g, "Vaguely Science-y Reasons");
-	v = v.replace(/\bShocked\b/g, "Vaguely Suprised");
-	v = v.replace(/\bShocking\b/g, "Barely Noticable");
+	v = v.replace(/\bShocked\b/g, "Vaguely Surprised");
+	v = v.replace(/\bShocking\b/g, "Barely Noticeable");
 	v = v.replace(/\bSimple Lessons\b/g, "Inane Pieces of Bullshit Advice");
 	v = v.replace(/\bStop What You're Doing\b/g, "Bookmark Now and Later Completely Forget About");
 	v = v.replace(/\bStop What You’re Doing\b/g, "Bookmark Now and Later Completely Forget About");
