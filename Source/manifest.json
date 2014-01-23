@@ -1,8 +1,10 @@
 {
 	"manifest_version": 2,
 	"name": "Downworthy",
-	"version": "0.0.3",
+	"version": "0.0.4",
+	"default_locale": "en",
 	"description": "Replaces hyberbolic headlines from bombastic viral websites with a slightly more realistic version.",
+	
 	"content_scripts": 
 	[
 		{
@@ -10,6 +12,21 @@
 			"js": ["content_script.js"],
 			"run_at": "document_end"
 		}
-	]
+	],
+	
+	"icons": 
+	{ 
+		"16":  "images/icon16.png",
+        "48":  "images/icon48.png",
+        "128": "images/icon128.png"
+    },
+    
+    "browser_action": 
+    {
+    	"default_icon":  "images/icon19-on.png",
+		"default_title": "Toggle Downworthy"
+	},
+  "content_security_policy": "default-src 'none'; script-src 'self'"
+	
 }
 
