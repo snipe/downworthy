@@ -9,11 +9,18 @@ function updateBadge(paused){
 chrome.browserAction.onClicked.addListener(
     function(tab){
         localStorage.setItem("lastChangedAt", now());
+        
+        //chrome.storage.sync.set({'value': theValue}, function() {
+        
+        
         if (localStorage.getItem('paused') == 'true'){
+        //if (chrome.storage.sync.get('pluginpaused' == 'true'){
            localStorage.setItem('paused', false);
+           chrome.storage.sync.set({'paused': false});
            updateBadge(false);
         } else {
            localStorage.setItem('paused', true);
+           chrome.storage.sync.set({'paused': true});
            updateBadge(true);
         }
         chrome.tabs.update(tab.id, {url: tab.url});
@@ -23,10 +30,11 @@ chrome.extension.onRequest.addListener(
     function(request, sender, sendResponse) {
         if (request.name == "isPaused?")
             sendResponse({value: localStorage.getItem('paused')});
+            //alert(localStorage.getItem('paused'));
         else if (request.name == "setOptions") {
             localStorage.setItem('options', request.options);
-            checkForRandomSwap();
-            handleNewOptions(JSON.parse(request.options));
+//            checkForRandomSwap();
+//            handleNewOptions(JSON.parse(request.options));
         }
 });
 
@@ -61,3 +69,5 @@ function checkForRandomSwap() {
 
 updateBadge(localStorage.getItem('paused') == true);
 checkForRandomSwap();
+
+alert(localStorage.getItem('paused'));

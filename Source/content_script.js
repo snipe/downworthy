@@ -1,37 +1,56 @@
-walk(document.body);
+// Check to see if the plugin is paused, and skip walking the DOM at all if it is
+chrome.extension.sendRequest({name: "isPaused?"}, function(response) {
+var isPaused = response.value;
 
-function walk(node) 
+	if (isPaused != 'true') {	
+		console.log('isPaused is ' + response.value + ' - filter should fire');
+		walk(document.body);
+	} else {
+		console.log('isPaused is ' + response.value + 'filter will not fire');
+	}
+
+});
+
+
+function walk(node, isPaused) 
 {
+
 	// I stole this function from here: - ZW
-	// And I stole it from ZW
+	// And I stole it from ZW - AG
 	// http://is.gd/mwZp7E
+	
+		
+	
 	
 	var child, next;
 
-	switch ( node.nodeType )  
-	{
-		case 1:  // Element
-		case 9:  // Document
-		case 11: // Document fragment
-			child = node.firstChild;
-			while ( child ) 
+			switch ( node.nodeType )  
 			{
-				next = child.nextSibling;
-				walk(child);
-				child = next;
+				case 1:  // Element
+				case 9:  // Document
+				case 11: // Document fragment
+					child = node.firstChild;
+					while ( child ) 
+					{
+						next = child.nextSibling;
+						walk(child);
+						child = next;
+					}
+					break;
+		
+				case 3: // Text node
+					handleText(node);
+					break;
 			}
-			break;
-
-		case 3: // Text node
-			handleText(node);
-			break;
-	}
+		
+	
 	
 }
 
 function handleText(textNode) 
 {
-	if (localStorage.getItem('paused') != 'true'){
+
+
 	var v = textNode.nodeValue;
 
 	v = v.replace(/\bAbsolutely\b/g, "Moderately");
@@ -104,22 +123,12 @@ function handleText(textNode)
 	v = v.replace(/\bYou Wont Believe\b/g, "In All Likelihood, You'll Believe");
 
 	v = v.replace(/\b(?:Top )?((?:(?:\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Thirteen|Fourteen|Fifteen|Sixteen|Seventeen|Eighteen|Nineteen|Twenty|Thirty|Forty|Fourty|Fifty|Sixty|Seventy|Eighty|Ninety|Hundred)(?: |-)?)+) Things/g, "Inane Listicle of $1 Things You've Already Seen Somewhere Else");
-	}
+	
 			
 	textNode.nodeValue = v;
+	
 	
 }
 
 
 
-
-
-chrome.extension.sendRequest({name: "isPaused?"}, function(response) {
-  if (response.value != 'true') {
-    handleText(document.body);
-
-    document.body.addEventListener('DOMNodeInserted', function(event) {
-        handleText(event.target);
-    });
-  }
-});
