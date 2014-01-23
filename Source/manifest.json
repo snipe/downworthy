@@ -2,7 +2,6 @@
 	"manifest_version": 2,
 	"name": "Downworthy",
 	"version": "0.0.4",
-	"default_locale": "en",
 	"description": "Replaces hyberbolic headlines from bombastic viral websites with a slightly more realistic version.",
 	
 	"content_scripts": 
