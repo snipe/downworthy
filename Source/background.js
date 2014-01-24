@@ -1,77 +1,104 @@
-function updateBadge(paused){
-    if (paused){
-        chrome.browserAction.setBadgeText({text:"OFF"});
-    } else {
-        chrome.browserAction.setBadgeText({text:""});
+(function() {
+
+    // TODO: Abstract localStorage key strings
+
+    var ONE_DAY = 1000 * 60 * 60 * 24;
+
+    var _alreadyQueued = false;
+    var _dictionary;
+
+    function now() {
+        return new Date().getTime();
     }
-}
 
-chrome.browserAction.onClicked.addListener(
-    function(tab){
-        localStorage.setItem("lastChangedAt", now());
-        
-        //chrome.storage.sync.set({'value': theValue}, function() {
-        
-        
-        if (localStorage.getItem('paused') == 'true'){
-        //if (chrome.storage.sync.get('pluginpaused' == 'true'){
-           localStorage.setItem('paused', false);
-           chrome.storage.sync.set({'paused': false});
-           updateBadge(false);
-        } else {
-           localStorage.setItem('paused', true);
-           chrome.storage.sync.set({'paused': true});
-           updateBadge(true);
+    function checkForRandomSwap() {
+        var lastChangedAt, pollTimeout;
+        var options = JSON.parse(localStorage.getItem('options'));
+
+        if(options.checkDaily) {
+            lastChangedAt = parseInt(localStorage.getItem('lastChangedAt'), 10);
+
+            // If it's never been changed, or if it's been over a day since it was changed...
+            if(isNaN(lastChangedAt) || lastChangedAt + ONE_DAY < now()) {
+                var pause = Math.random() > 0.5; // Flip a coin!
+                lastChangedAt = setPaused(pause);
+            }
+
+            // Set up the next check.
+            if(!_alreadyQueued) {
+                pollTimeout = (lastChangedAt + ONE_DAY) - now();
+
+                setTimeout(function() {
+                    _alreadyQueued = false;
+                    checkForRandomSwap();
+                }, pollTimeout);
+                
+                _alreadyQueued = true;
+            }
         }
-        chrome.tabs.update(tab.id, {url: tab.url});
-});
+    }
 
-chrome.extension.onRequest.addListener(
-    function(request, sender, sendResponse) {
-        if (request.name == "isPaused?")
-            sendResponse({value: localStorage.getItem('paused')});
-            //alert(localStorage.getItem('paused'));
-        else if (request.name == "setOptions") {
-            localStorage.setItem('options', request.options);
-//            checkForRandomSwap();
-//            handleNewOptions(JSON.parse(request.options));
-        }
-        else if(request.name == "getDictionary") {
-            var dict = {a: 'hello', b: 'gbye'};
-            sendResponse({dictionary: dict});
-        }
-});
+    // TODO: Embed a default dictionary in case the JSON doesn't load properly?
 
-var ONE_DAY = 1000 * 60 * 60 * 24;
-//returns the current time in millis since epoch
-function now() {
-  return +new Date();
-}
+    function loadDictionary() {
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if(xhr.readyState === 4 && xhr.status === 200) {
+                _dictionary = JSON.parse(xhr.responseText);
+            }
+        };
+        // TODO: Select the JSON file from a setting.
+        xhr.open("GET", chrome.extension.getURL('dictionaries/test.json'), true);
+        xhr.send();
+    }
 
-var alreadyQueued = false;
-function checkForRandomSwap() {
-    var options = JSON.parse(localStorage.getItem('options'));
-    if (!options.checkDaily) return;
-    var lastChangedAt = parseInt(localStorage.getItem("lastChangedAt"), 10);
-    //if we've never changed it, or if it's been over a day since it was changed
-    if (isNaN(lastChangedAt) || lastChangedAt + ONE_DAY < now()) {
-        lastChangedAt = now();
-        var paused = Math.random() > 0.5;
-        updateBadge(paused);
+    function updateBadge(paused) {
+        var badgeText = paused ? "OFF" : "";
+        chrome.browserAction.setBadgeText( { text: badgeText } );
+    }
+
+    function setPaused(paused) {
+        var lastChangedAt = now();
+
         localStorage.setItem('paused', paused);
-        localStorage.setItem("lastChangedAt", lastChangedAt);
-    }
-    if (!alreadyQueued) {
-        var time_until_next_check = (lastChangedAt + ONE_DAY) - now();
-        alreadyQueued = true;
-        setTimeout(function() {
-            alreadyQueued = false;
-            checkForRandomSwap();
-        }, time_until_next_check);
-    }
-}
+        chrome.storage.sync.set( { 'paused': paused } );
+        updateBadge(paused);
 
-updateBadge(localStorage.getItem('paused') == true);
-checkForRandomSwap();
+        localStorage.setItem('lastChangedAt', lastChangedAt);
+        return lastChangedAt;
+    }
 
-alert(localStorage.getItem('paused'));
+    function togglePause(tab) {
+        var currentlyPaused = localStorage.getItem('paused') == 'true';
+
+        setPaused(!currentlyPaused);
+
+        // Reload the current tab.
+        chrome.tabs.update(tab.id, {url: tab.url});
+    }
+
+    function onMessage(request, sender, sendResponse) {
+        var requestId = request.id;
+
+        if(requestId == 'isPaused?') {
+            // TODO: Convert to boolean.
+            sendResponse({value: localStorage.getItem('paused')});
+        }
+        else if(requestId == 'setOptions') {
+            localStorage.setItem('options', request.options);
+        }
+        else if(requestId == 'getDictionary') {
+            sendResponse({dictionary: _dictionary});
+        }
+    }
+
+    chrome.browserAction.onClicked.addListener(togglePause);
+    chrome.extension.onRequest.addListener(onMessage);
+
+    loadDictionary();
+
+    updateBadge(localStorage.getItem('paused') == 'true');
+
+    checkForRandomSwap();
+
+})();
