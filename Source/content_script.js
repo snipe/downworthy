@@ -4,7 +4,8 @@
 
 	function getDictionary(callback) {
 		chrome.extension.sendRequest({id: "getDictionary"}, function(response) {
-			callback.call(_self, response);
+			_dictionary = response; // Store the dictionary for later use.
+			callback.apply(_self, arguments);
 		});
 	}
 
@@ -55,10 +56,7 @@
 		console.log('isPaused is ' + isPaused);
 
 		if(isPaused != 'true') {
-			getDictionary(function(dictionary) {
-				// TODO: Use the dictionary.
-				_dictionary = dictionary;
-
+			getDictionary(function() {
 				walk(document.body);
 			});
 		}
