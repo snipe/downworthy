@@ -2,7 +2,7 @@
 	var _self = this;
 
 	function getDictionary(callback) {
-		chrome.extension.sendRequest({name: "getDictionary"}, function(response) {
+		chrome.extension.sendRequest({id: "getDictionary"}, function(response) {
 			callback.call(_self, response.dictionary);
 		});
 	}
@@ -84,7 +84,7 @@
 		textNode.nodeValue = v;
 	}
 
-	function walk(node, handler) {
+	function walk(node) {
 
 		// I stole this function from here: - ZW
 		// And I stole it from ZW - AG
@@ -109,7 +109,7 @@
 		}
 	}
 
-	chrome.extension.sendRequest({name: 'isPaused?'}, function(response) {
+	chrome.extension.sendRequest({id: 'isPaused?'}, function(response) {
 		var isPaused = response.value;
 		console.log('isPaused is ' + isPaused);
 
