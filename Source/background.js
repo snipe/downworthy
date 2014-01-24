@@ -36,6 +36,10 @@ chrome.extension.onRequest.addListener(
 //            checkForRandomSwap();
 //            handleNewOptions(JSON.parse(request.options));
         }
+        else if(request.name == "getDictionary") {
+            var dict = {a: 'hello', b: 'gbye'};
+            sendResponse({dictionary: dict});
+        }
 });
 
 var ONE_DAY = 1000 * 60 * 60 * 24;
