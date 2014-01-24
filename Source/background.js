@@ -50,7 +50,7 @@
                 _dictionary = JSON.parse(xhr.responseText);
             }
         };
-        // TODO: Select the JSON file from a setting.
+        // TODO: Select the JSON file from a value passed into this function.
         xhr.open("GET", chrome.extension.getURL('dictionaries/original.json'), true);
         xhr.send();
     }
@@ -58,6 +58,10 @@
     function updateBadge(paused) {
         var badgeText = paused ? "OFF" : "";
         chrome.browserAction.setBadgeText( { text: badgeText } );
+    }
+
+    function isPaused() {
+        return (localStorage.getItem(KEY_PAUSED) == 'true');
     }
 
     function setPaused(paused) {
@@ -72,9 +76,7 @@
     }
 
     function togglePause(tab) {
-        var currentlyPaused = localStorage.getItem(KEY_PAUSED) == 'true';
-
-        setPaused(!currentlyPaused);
+        setPaused(!isPaused());
 
         // Reload the current tab.
         chrome.tabs.update(tab.id, {url: tab.url});
@@ -85,7 +87,7 @@
 
         if(requestId == 'isPaused?') {
             // TODO: Convert to boolean.
-            sendResponse({value: localStorage.getItem(KEY_PAUSED)});
+            sendResponse({value: isPaused()});
         }
         else if(requestId == 'setOptions') {
             localStorage.setItem(KEY_OPTIONS, request.options);
@@ -98,9 +100,11 @@
     chrome.browserAction.onClicked.addListener(togglePause);
     chrome.extension.onRequest.addListener(onMessage);
 
+    // TODO: Have an option where you can select a specific replacement set, such as "Standard", "Cynical Millenial", etc.
+    // TODO: The option value would then be passed into loadDictionary for appropriate dictionary file selection.
     loadDictionary();
 
-    updateBadge(localStorage.getItem(KEY_PAUSED) == 'true');
+    updateBadge(isPaused());
 
     checkForRandomSwap();
 

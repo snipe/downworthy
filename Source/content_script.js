@@ -55,7 +55,7 @@
 		var isPaused = response.value;
 		console.log('isPaused is ' + isPaused);
 
-		if(isPaused != 'true') {
+		if(!isPaused) {
 			getDictionary(function() {
 				walk(document.body);
 			});
