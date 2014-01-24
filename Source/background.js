@@ -15,6 +15,7 @@
         var lastChangedAt, pollTimeout;
         var options = JSON.parse(localStorage.getItem('options'));
 
+        // FIXME: Options is apparently not being set?
         if(options.checkDaily) {
             lastChangedAt = parseInt(localStorage.getItem('lastChangedAt'), 10);
 
@@ -48,7 +49,7 @@
             }
         };
         // TODO: Select the JSON file from a setting.
-        xhr.open("GET", chrome.extension.getURL('dictionaries/test.json'), true);
+        xhr.open("GET", chrome.extension.getURL('dictionaries/original.json'), true);
         xhr.send();
     }
 
@@ -88,7 +89,7 @@
             localStorage.setItem('options', request.options);
         }
         else if(requestId == 'getDictionary') {
-            sendResponse({dictionary: _dictionary});
+            sendResponse(_dictionary);
         }
     }
 
