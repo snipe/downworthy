@@ -1,8 +1,10 @@
 (function() {
 
-    // TODO: Abstract localStorage key strings
-
     var ONE_DAY = 1000 * 60 * 60 * 24;
+
+    var KEY_LAST_CHANGED_AT = 'lastChangedAt';
+    var KEY_OPTIONS = 'options';
+    var KEY_PAUSED = 'paused';
 
     var _alreadyQueued = false;
     var _dictionary;
@@ -13,11 +15,11 @@
 
     function checkForRandomSwap() {
         var lastChangedAt, pollTimeout;
-        var options = JSON.parse(localStorage.getItem('options'));
+        var options = JSON.parse(localStorage.getItem(KEY_OPTIONS));
 
         // FIXME: Options is apparently not being set?
         if(options.checkDaily) {
-            lastChangedAt = parseInt(localStorage.getItem('lastChangedAt'), 10);
+            lastChangedAt = parseInt(localStorage.getItem(KEY_LAST_CHANGED_AT), 10);
 
             // If it's never been changed, or if it's been over a day since it was changed...
             if(isNaN(lastChangedAt) || lastChangedAt + ONE_DAY < now()) {
@@ -61,16 +63,16 @@
     function setPaused(paused) {
         var lastChangedAt = now();
 
-        localStorage.setItem('paused', paused);
+        localStorage.setItem(KEY_PAUSED, paused);
         chrome.storage.sync.set( { 'paused': paused } );
         updateBadge(paused);
 
-        localStorage.setItem('lastChangedAt', lastChangedAt);
+        localStorage.setItem(KEY_LAST_CHANGED_AT, lastChangedAt);
         return lastChangedAt;
     }
 
     function togglePause(tab) {
-        var currentlyPaused = localStorage.getItem('paused') == 'true';
+        var currentlyPaused = localStorage.getItem(KEY_PAUSED) == 'true';
 
         setPaused(!currentlyPaused);
 
@@ -83,10 +85,10 @@
 
         if(requestId == 'isPaused?') {
             // TODO: Convert to boolean.
-            sendResponse({value: localStorage.getItem('paused')});
+            sendResponse({value: localStorage.getItem(KEY_PAUSED)});
         }
         else if(requestId == 'setOptions') {
-            localStorage.setItem('options', request.options);
+            localStorage.setItem(KEY_OPTIONS, request.options);
         }
         else if(requestId == 'getDictionary') {
             sendResponse(_dictionary);
@@ -98,7 +100,7 @@
 
     loadDictionary();
 
-    updateBadge(localStorage.getItem('paused') == 'true');
+    updateBadge(localStorage.getItem(KEY_PAUSED) == 'true');
 
     checkForRandomSwap();
 
