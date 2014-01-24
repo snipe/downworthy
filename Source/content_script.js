@@ -121,7 +121,9 @@ function handleText(textNode)
 	v = v.replace(/\bYou Won’t Believe\b/g, "In All Likelihood, You'll Believe");	
 	v = v.replace(/\bYou Won&#8217;t Believe\b/g, "In All Likelihood, You'll Believe");
 	v = v.replace(/\bYou Wont Believe\b/g, "In All Likelihood, You'll Believe");
-
+	v = v.replace(/\b[Yy]ou [Hh]ad [Nn]o [Ii]dea\b/g, "You Already Knew");
+	v = v.replace(/\b[Bb]efore [Yy]ou [Dd]ie\b/g, "Before You Completely Forget About And Move On With Your Life");
+	
 	v = v.replace(/\b(?:Top )?((?:(?:\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Thirteen|Fourteen|Fifteen|Sixteen|Seventeen|Eighteen|Nineteen|Twenty|Thirty|Forty|Fourty|Fifty|Sixty|Seventy|Eighty|Ninety|Hundred)(?: |-)?)+) Things/g, "Inane Listicle of $1 Things You've Already Seen Somewhere Else");
 	
 			
