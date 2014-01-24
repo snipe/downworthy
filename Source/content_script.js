@@ -68,6 +68,7 @@ function handleText(textNode)
 	v = v.replace(/\bepic\b/g, "mundane");
 	v = v.replace(/\bEpic\b/g, "Mundane");
 	v = v.replace(/\bGo Viral\b/g, "Be Overused So Much That You'll Silently Pray for the Sweet Release of Death to Make it Stop");
+	v = v.replace(/\bWent Viral\b/g, "Has Been Overused So Much That You're Silently Praying for the Sweet Release of Death to Make it Stop");
 	v = v.replace(/\bgreatest\b/g, "average");
 	v = v.replace(/\bGreatest\b/g, "Average");
 	v = v.replace(/\bIncredible\b/g, "Painfully Ordinary");
