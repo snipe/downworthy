@@ -75,6 +75,7 @@ function handleText(textNode)
 	v = v.replace(/\bInfuriate\b/g, "Mildly Annoy");
 	v = v.replace(/\bliterally\b/g, "figuratively");
 	v = v.replace(/\bLiterally\b/g, "Figuratively");
+	v = v.replace(/\bMake You Cry\b/g, "Make You Mildly Sentimental");
 	v = v.replace(/\bMind Blowing\b/g, "Mind-Numbingly Ordinary");
 	v = v.replace(/\bMind-Blowing\b/g, "Painfully Ordinary");
 	v = v.replace(/\bNothing Could Prepare Me For\b/g, "Does ANYONE Fucking Care About");
