@@ -22,6 +22,10 @@
 
 		// TODO: Allow for more complicated regexes in the dictionary file?
 		v = v.replace(/\b(?:Top )?((?:(?:\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Thirteen|Fourteen|Fifteen|Sixteen|Seventeen|Eighteen|Nineteen|Twenty|Thirty|Forty|Fourty|Fifty|Sixty|Seventy|Eighty|Ninety|Hundred)(?: |-)?)+) Things/g, "Inane Listicle of $1 Things You've Already Seen Somewhere Else");
+		v = v.replace(/\b[Rr]estored [Mm]y [Ff]aith [Ii]n [Hh]umanity\b/g, "Affected Me In No Meangingful Way Whatsoever");
+		v = v.replace(/\b[Rr]estored [Oo]ur [Ff]aith [Ii]n [Hh]umanity\b/g, "Affected Us In No Meangingful Way Whatsoever");
+		v = v.replace(/\b(?:Top )?((?:(?:\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Thirteen|Fourteen|Fifteen|Sixteen|Seventeen|Eighteen|Nineteen|Twenty|Thirty|Forty|Fourty|Fifty|Sixty|Seventy|Eighty|Ninety|Hundred)(?: |-)?)+) Weird/g, "$1 Boring");
+
 			
 		textNode.nodeValue = v;
 	}
