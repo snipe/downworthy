@@ -124,7 +124,9 @@ function handleText(textNode)
 	v = v.replace(/\bI Can't Believe\b/g, "I Am Not Remotely Surprised By");
 	v = v.replace(/\bI Can Not Believe\b/g, "I Am Not Remotely Surprised By");
 	v = v.replace(/\bI Still Can't Believe\b/g, "I Am Still Not Remotely Surprised By");
-
+	v = v.replace(/\b[Yy]ou [Hh]ad [Nn]o [Ii]dea\b/g, "You Already Knew");
+	v = v.replace(/\b[Bb]efore [Yy]ou [Dd]ie\b/g, "Before You Completely Forget About And Move On With Your Life");
+	
 	v = v.replace(/\b(?:Top )?((?:(?:\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Thirteen|Fourteen|Fifteen|Sixteen|Seventeen|Eighteen|Nineteen|Twenty|Thirty|Forty|Fourty|Fifty|Sixty|Seventy|Eighty|Ninety|Hundred)(?: |-)?)+) Things/g, "Inane Listicle of $1 Things You've Already Seen Somewhere Else");
 	
 			
