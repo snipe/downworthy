@@ -57,7 +57,6 @@
 
 	chrome.extension.sendRequest({id: 'isPaused?'}, function(response) {
 		var isPaused = response.value;
-		console.log('isPaused is ' + isPaused);
 
 		if(!isPaused) {
 			getDictionary(function() {
