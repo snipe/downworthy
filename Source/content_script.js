@@ -26,7 +26,7 @@
 		v = v.replace(/\b[Rr]estored [Oo]ur [Ff]aith [Ii]n [Hh]umanity\b/g, "Affected Us In No Meaningful Way Whatsoever");
 		v = v.replace(/\b(?:Top )?((?:(?:\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Thirteen|Fourteen|Fifteen|Sixteen|Seventeen|Eighteen|Nineteen|Twenty|Thirty|Forty|Fourty|Fifty|Sixty|Seventy|Eighty|Ninety|Hundred)(?: |-)?)+) Weird/g, "$1 Boring");
 		v = v.replace(/\b^(Is|Can|Do|Will) (.*)\?\B/g, "$1 $2? Maybe, but Most Likely Not.");
-		v = v.replace(/\b^(Why\s|How\s)(.*)\b$/g, "$2");
+		v = v.replace(/\b^([Rr]easons\s|[Ww]hy\s|[Hh]ow\s|[Ww]hat\s[Yy]ou\s[Ss]hould\s[Kk]now\s[Aa]bout\s)(.*)\b$/g, "$2");
 			
 		textNode.nodeValue = v;
 	}
