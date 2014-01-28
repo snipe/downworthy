@@ -16,7 +16,7 @@
 		var regex, original;
 
 		for(original in replacements) {
-			regex = new RegExp('\\b' + original + '\\b', 'g');
+			regex = new RegExp('\\b' + original + '\\b', "gi");
 			v = v.replace(regex, replacements[original]);
 		}
 
