@@ -1,5 +1,6 @@
 {
 	"replacements": {
+		"A Single" : "A",
 		"Absolutely" : "Moderately",
 		"Amazing" : "Barely Noticeable",
 		"Awesome" : "Probably Slightly Less Boring Than Working",
@@ -19,6 +20,8 @@
 		"Literally" : "Figuratively",
 		"Mind Blowing" : "Mind-Numbingly Ordinary",
 		"Mind-Blowing" : "Painfully Ordinary",
+		"Mind BLOWN" : "Meh",
+		"Mind Blown" : "Meh",
 		"Nothing Could Prepare Me For" : "Does ANYONE Fucking Care About",
 		"Of All Time" : "For Now",
 		"Of All Time" : "Of The Last 30 Seconds",
