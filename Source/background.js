@@ -83,7 +83,8 @@
     }
 
     function getExcluded() {
-        return JSON.parse(localStorage.getItem(KEY_OPTIONS))['excluded'];
+        var opts = JSON.parse(localStorage.getItem(KEY_OPTIONS));
+        return opts ? opts['excluded'] : [];
     }
 
     function onMessage(request, sender, sendResponse) {
