@@ -82,12 +82,19 @@
         chrome.tabs.update(tab.id, {url: tab.url});
     }
 
+    function getExcluded() {
+        return JSON.parse(localStorage.getItem(KEY_OPTIONS))['excluded'];
+    }
+
     function onMessage(request, sender, sendResponse) {
         var requestId = request.id;
 
         if(requestId == 'isPaused?') {
             // TODO: Convert to boolean.
             sendResponse({value: isPaused()});
+        }
+        else if(requestId == 'getExcluded') {
+            sendResponse({value: getExcluded()});
         }
         else if(requestId == 'setOptions') {
             localStorage.setItem(KEY_OPTIONS, request.options);

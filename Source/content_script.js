@@ -59,11 +59,23 @@
 	chrome.extension.sendRequest({id: 'isPaused?'}, function(response) {
 		var isPaused = response.value;
 
-		if(!isPaused) {
-			getDictionary(function() {
-				walk(document.body);
-			});
-		}
+        chrome.extension.sendRequest({id: 'getExcluded'}, function (r2) {
+            if(isPaused) {
+                return;
+            }
+            
+            var ex = r2.value;
+            for (x in ex) { 
+                if (window.location.href.indexOf(ex[x]) != -1) {
+                    return;
+                }
+            }
+
+            getDictionary(function() {
+                walk(document.body);
+            });
+        });
+
 	});
 
 })();
