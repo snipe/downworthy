@@ -11,22 +11,30 @@
 
 	function handleText(textNode) {
 		var replacements = _dictionary.replacements;
+        var expressions = _dictionary.expressions;
 		var v = textNode.nodeValue;
 
 		var regex, original;
 
-		for(original in replacements) {
-			regex = new RegExp('\\b' + original + '\\b', "gi");
-			v = v.replace(regex, replacements[original]);
+		//text replacements
+        for(original in replacements) {
+            original_escaped = original;
+            
+            regex_for_question_mark = /\?/g
+            regex_for_period = /\./g
+            
+            original_escaped = original_escaped.replace(regex_for_question_mark, "\\?");
+            original_escaped = original_escaped.replace(regex_for_period, "\\.");
+            
+			regex = new RegExp('\\b' + original_escaped + '\\b', "gi");
+            v = v.replace(regex, replacements[original]);
 		}
-
-		// TODO: Allow for more complicated regexes in the dictionary file?
-		v = v.replace(/\b(?:Top )?((?:(?:\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Thirteen|Fourteen|Fifteen|Sixteen|Seventeen|Eighteen|Nineteen|Twenty|Thirty|Forty|Fourty|Fifty|Sixty|Seventy|Eighty|Ninety|Hundred)(?: |-)?)+) Things/g, "Inane Listicle of $1 Things You've Already Seen Somewhere Else");
-		v = v.replace(/\b[Rr]estored [Mm]y [Ff]aith [Ii]n [Hh]umanity\b/g, "Affected Me In No Meaningful Way Whatsoever");
-		v = v.replace(/\b[Rr]estored [Oo]ur [Ff]aith [Ii]n [Hh]umanity\b/g, "Affected Us In No Meaningful Way Whatsoever");
-		v = v.replace(/\b(?:Top )?((?:(?:\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Thirteen|Fourteen|Fifteen|Sixteen|Seventeen|Eighteen|Nineteen|Twenty|Thirty|Forty|Fourty|Fifty|Sixty|Seventy|Eighty|Ninety|Hundred)(?: |-)?)+) Weird/g, "$1 Boring");
-		v = v.replace(/\b^(Is|Can|Do|Will) (.*)\?\B/g, "$1 $2? Maybe, but Most Likely Not.");
-		v = v.replace(/\b^([Rr]easons\s|[Ww]hy\s|[Hh]ow\s|[Ww]hat\s[Yy]ou\s[Ss]hould\s[Kk]now\s[Aa]bout\s)(.*)\b$/g, "$2");
+        
+        // regex replacements
+        for(original in expressions) {
+			regex = new RegExp(original, "g");
+			v = v.replace(regex, expressions[original]);
+		}
 			
 		textNode.nodeValue = v;
 	}
