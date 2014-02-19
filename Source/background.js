@@ -7,7 +7,6 @@
     var KEY_PAUSED = 'paused';
 
     var _alreadyQueued = false;
-    var _dictionary;
 
     function now() {
         return new Date().getTime();
@@ -39,22 +38,6 @@
                 _alreadyQueued = true;
             }
         }
-    }
-
-    // TODO: Embed a default dictionary in case the JSON doesn't load properly?
-
-    function loadDictionary() {
-        var xhr = new XMLHttpRequest();
-        xhr.onreadystatechange = function() {
-            if(xhr.readyState === 4 && xhr.status === 200) {
-                // eval unfortunately necessary because pure JSON doesn't allow:
-                // comments, question-marks, regular expressions
-                eval("_dictionary = " + xhr.responseText);
-            }
-        };
-        // TODO: Select the JSON file from a value passed into this function.
-        xhr.open("GET", chrome.extension.getURL('dictionaries/original.json'), true);
-        xhr.send();
     }
 
     function updateBadge(paused) {
@@ -103,7 +86,7 @@
             localStorage.setItem(KEY_OPTIONS, request.options);
         }
         else if(requestId == 'getDictionary') {
-            sendResponse(_dictionary);
+            sendResponse(dictionary);
         }
     }
 
@@ -112,7 +95,6 @@
 
     // TODO: Have an option where you can select a specific replacement set, such as "Standard", "Cynical Millenial", etc.
     // TODO: The option value would then be passed into loadDictionary for appropriate dictionary file selection.
-    loadDictionary();
 
     updateBadge(isPaused());
 
