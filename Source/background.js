@@ -47,7 +47,9 @@
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if(xhr.readyState === 4 && xhr.status === 200) {
-                _dictionary = JSON.parse(xhr.responseText);
+                // eval unfortunately necessary because pure JSON doesn't allow:
+                // comments, question-marks, regular expressions
+                eval("_dictionary = " + xhr.responseText);
             }
         };
         // TODO: Select the JSON file from a value passed into this function.

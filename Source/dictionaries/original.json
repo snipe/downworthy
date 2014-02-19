@@ -54,7 +54,7 @@
 		"Will Change Your Life Forever" : "Will Not Change Your Life in ANY Meaningful or Lasting Way",
 		"Won the Internet" : "Seemed Pretty Cool",
 		"Wonderful" : "Mildly Decent",
-		"Worst" : "Vaguely Unpleasant",
+		"Worst" : "Vaguely Unpleasantt",
 		"Wow" : "Oh GOD This is SO Boring. Please Kill Me",
 		"WOW" : "Zzzzzzzzzzz",
 		"You Didn't Know Exist" : "No One Gives a Shit About",
@@ -67,5 +67,14 @@
 		"You Won’t Believe" : "In All Likelihood, You'll Believe",	
 		"You Won&#8217;t Believe" : "In All Likelihood, You'll Believe",
 		"You Wont Believe" : "In All Likelihood, You'll Believe"
-	}
+	},
+    
+    "expressions": {
+        "\\b(?:Top )?((?:(?:\\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Thirteen|Fourteen|Fifteen|Sixteen|Seventeen|Eighteen|Nineteen|Twenty|Thirty|Forty|Fourty|Fifty|Sixty|Seventy|Eighty|Ninety|Hundred)(?: |-)?)+) Things" : "Inane Listicle of $1 Things You've Already Seen Somewhere Else",
+		"\\b[Rr]estored [Mm]y [Ff]aith [Ii]n [Hh]umanity\\b" : "Affected Me In No Meaningful Way Whatsoever",
+		"\\b[Rr]estored [Oo]ur [Ff]aith [Ii]n [Hh]umanity\\b" : "Affected Us In No Meaningful Way Whatsoever",
+		"\\b(?:Top )?((?:(?:\\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Thirteen|Fourteen|Fifteen|Sixteen|Seventeen|Eighteen|Nineteen|Twenty|Thirty|Forty|Fourty|Fifty|Sixty|Seventy|Eighty|Ninety|Hundred)(?: |-)?)+) Weird" : "$1 Boring",
+		"\\b^(Is|Can|Do|Will) (.*)\\?\\B" : "$1 $2? Maybe, but Most Likely Not.",
+		"\\b^([Rr]easons\\s|[Ww]hy\\s|[Hh]ow\\s|[Ww]hat\\s[Yy]ou\\s[Ss]hould\\s[Kk]now\\s[Aa]bout\\s)(.*)\\b$":"$2"
+    }
 }

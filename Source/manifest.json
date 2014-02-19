@@ -33,7 +33,7 @@
     	"default_icon":  "images/icon19-on.png",
 		"default_title": "Toggle Downworthy"
 	},
-  "content_security_policy": "default-src 'none'; script-src 'self'",
+  "content_security_policy": "default-src 'none'; script-src 'self' 'unsafe-eval'",
   "options_page": "options.html"
 	
 }
