@@ -1,4 +1,4 @@
-{
+var dictionary={
 	"replacements": {
 		"A Single" : "A",
 		"Absolutely" : "Moderately",
@@ -54,7 +54,7 @@
 		"Will Change Your Life Forever" : "Will Not Change Your Life in ANY Meaningful or Lasting Way",
 		"Won the Internet" : "Seemed Pretty Cool",
 		"Wonderful" : "Mildly Decent",
-		"Worst" : "Vaguely Unpleasantt",
+		"Worst" : "Vaguely Unpleasant",
 		"Wow" : "Oh GOD This is SO Boring. Please Kill Me",
 		"WOW" : "Zzzzzzzzzzz",
 		"You Didn't Know Exist" : "No One Gives a Shit About",
@@ -77,4 +77,4 @@
 		"\\b^(Is|Can|Do|Will) (.*)\\?\\B" : "$1 $2? Maybe, but Most Likely Not.",
 		"\\b^([Rr]easons\\s|[Ww]hy\\s|[Hh]ow\\s|[Ww]hat\\s[Yy]ou\\s[Ss]hould\\s[Kk]now\\s[Aa]bout\\s)(.*)\\b$":"$2"
     }
-}
+};
