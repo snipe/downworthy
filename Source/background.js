@@ -16,8 +16,7 @@
         var lastChangedAt, pollTimeout;
         var options = JSON.parse(localStorage.getItem(KEY_OPTIONS));
 
-        // FIXME: Options is apparently not being set?
-        if(options.checkDaily) {
+        if(options && options.checkDaily) {
             lastChangedAt = parseInt(localStorage.getItem(KEY_LAST_CHANGED_AT), 10);
 
             // If it's never been changed, or if it's been over a day since it was changed...
