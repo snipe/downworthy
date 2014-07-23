@@ -33,7 +33,7 @@
                     _alreadyQueued = false;
                     checkForRandomSwap();
                 }, pollTimeout);
-                
+
                 _alreadyQueued = true;
             }
         }

@@ -6,13 +6,13 @@
 	"permissions": [
 	  "storage"
 	],
-	
-	"background": 
+
+	"background":
 	{
-    	"page": "background.html"
+		"page": "background.html"
 	},
-	
-	"content_scripts": 
+
+	"content_scripts":
 	[
 		{
 			"matches": ["*://*/*"],
@@ -20,21 +20,21 @@
 			"run_at": "document_end"
 		}
 	],
-	
-	"icons": 
-	{ 
+
+	"icons":
+	{
 		"16":  "images/icon16.png",
-        "48":  "images/icon48.png",
-        "128": "images/icon128.png"
-    },
-    
-    "browser_action": 
-    {
-    	"default_icon":  "images/icon19-on.png",
+		"48":  "images/icon48.png",
+		"128": "images/icon128.png"
+	},
+
+	"browser_action":
+	{
+		"default_icon":  "images/icon19-on.png",
 		"default_title": "Toggle Downworthy"
 	},
-  "content_security_policy": "default-src 'none'; script-src 'self'",
-  "options_page": "options.html"
-	
+	"content_security_policy": "default-src 'none'; script-src 'self'",
+	"options_page": "options.html"
+
 }
 
