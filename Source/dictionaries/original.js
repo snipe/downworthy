@@ -5,7 +5,6 @@ var dictionary={
 		"Amazing" : "Barely Noticeable",
 		"Awesome" : "Probably Slightly Less Boring Than Working",
 		"Best" : "Most Unexceptional",
-                "Breathtaking" : "Underwhelming",
 		"Breathtaking" : "Fleetingly Inspirational",
 		"But what happened next" : "And As You Expect It",
 		"Can change your life" : "Will Not Change Your Life in ANY Meaningful Way",
