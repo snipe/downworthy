@@ -25,3 +25,7 @@ The code I have right now is very basic, working mostly from the fantastic Cloud
 I also need to better handle infinite scroll and progressive loading. Right now, it fires when the DOM is finished loading, and then it doesn't fire again, which means when you're stuck on one of these websites (that of course uses infinite scroll), the stuff that hasn't appeared on the page at the time of page load completion and prior to additional content being revealed won't be transformed. 
 
 And finally, I'm going to have the actual string replacement library pulling from S3, so that it updates automatically, so when I update the goods, you get them the next time you start your browser.
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/snipe/downworthy/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
