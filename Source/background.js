@@ -41,13 +41,24 @@
         }
     }
 
+    function diversify(dictionary) {
+        Object.keys(dictionary).forEach(function (key) {
+            var loweredKey = key.toLowerCase();
+            if (loweredKey != key && !dictionary.hasOwnProperty(loweredKey)) {
+                var value = dictionary[key];
+                dictionary[loweredKey] = value.toLowerCase();
+            }
+        });
+    }
+    
     // TODO: Embed a default dictionary in case the JSON doesn't load properly?
 
     function loadDictionary() {
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if(xhr.readyState === 4 && xhr.status === 200) {
-                _dictionary = JSON.parse(xhr.responseText);
+                _dictionary = JSON.parse(xhr.responseText); 
+                _dictionary.replacements = diversify(_dictionary.replacements);
             }
         };
         // TODO: Select the JSON file from a value passed into this function.
