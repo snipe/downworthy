@@ -81,6 +81,7 @@ var dictionary={
 		"\\b[Rr]estored [Oo]ur [Ff]aith [Ii]n [Hh]umanity\\b" : "Affected Us In No Meaningful Way Whatsoever",
 		"\\b(?:Top )?((?:(?:\\d+|One|Two|Three|Four|Five|Six|Seven|Eight|Nine|Ten|Eleven|Twelve|Thirteen|Fourteen|Fifteen|Sixteen|Seventeen|Eighteen|Nineteen|Twenty|Thirty|Forty|Fourty|Fifty|Sixty|Seventy|Eighty|Ninety|Hundred)(?: |-)?)+) Weird" : "$1 Boring",
 		"\\b^(Is|Can|Do|Will) (.*)\\?\\B" : "$1 $2? Maybe, but Most Likely Not.",
-		"\\b^([Rr]easons\\s|[Ww]hy\\s|[Hh]ow\\s|[Ww]hat\\s[Yy]ou\\s[Ss]hould\\s[Kk]now\\s[Aa]bout\\s)(.*)\\b$":"$2"
+		"\\b^([Rr]easons\\s|[Ww]hy\\s|[Hh]ow\\s|[Ww]hat\\s[Yy]ou\\s[Ss]hould\\s[Kk]now\\s[Aa]bout\\s)(.*)\\b$":"$2",
+	        "\\bThe Best(\\s\\w+)+\\sEver\\b":"Some Lame $1"
     }
 };
