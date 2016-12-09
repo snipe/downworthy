@@ -71,7 +71,8 @@ var dictionary={
 		"You Won't Believe" : "In All Likelihood, You'll Believe",
 		"You Won’t Believe" : "In All Likelihood, You'll Believe",	
 		"You Won&#8217;t Believe" : "In All Likelihood, You'll Believe",
-		"You Wont Believe" : "In All Likelihood, You'll Believe"
+		"You Wont Believe" : "In All Likelihood, You'll Believe",
+		"Blow You Away": "Waste a Few Minutes of Your Time"
 	},
     
     "expressions": {
